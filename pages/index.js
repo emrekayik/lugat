@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import Head from 'next/head'
-import styled from 'styled-components';
+import React, { useState } from "react";
+import Head from "next/head";
+import styled from "styled-components";
+import Sozluk from "../components/Sozluk";
 
 const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 4em;
   color: palevioletred;
 `;
 
@@ -11,11 +12,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 4em;
+  padding-top: 1em;
   background-color: papayawhip;
   height: 100vh;
 `;
-
 
 export default function Home() {
   return (
@@ -27,42 +28,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <Title>
-          Lügat
-        </Title>
+        <Title>Lügat</Title>
         <Sozluk />
       </Container>
     </>
-  )
-}
-
-function Sozluk() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearch = async () => {
-    const res = await fetch(`/api/lugat?kelime=${searchTerm}`);
-    const data = await res.json();
-    setSearchResults(data);
-    console.log(searchResults)
-    console.log(data)
-    
-  };
-
-  return (
-    <div>
-      <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-      <button onClick={handleSearch}>Search</button>
-
-      <ul style={{
-        color: 'red'}
-      }>
-      {searchResults.map(item => (
-        <li key={item.anlam_sira}>
-          <p>{item.anlam}</p>
-        </li>
-      ))}
-      </ul>
-    </div>
   );
 }
