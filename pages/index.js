@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import styled from "styled-components";
 import Sozluk from "../components/Sozluk";
@@ -19,6 +19,7 @@ const Container = styled.div`
 `;
 
 export default function Home() {
+
   return (
     <>
       <Head>

@@ -6,6 +6,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 `;
 
 const Input = styled.input`
@@ -46,6 +52,8 @@ const Li = styled.li`
   padding: 12px 0;
   box-sizing: border-box;
 
+  font-size: large;
+
   &::before {
     content: counters(index, ".", decimal-leading-zero);
     font-size: 1.5rem;
@@ -65,37 +73,38 @@ const Li = styled.li`
   }
 `;
 
-export default function Sozluk() {
+export default function Sozluk({ kelime }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-
+  
   const handleSearch = async () => {
     const res = await fetch(`/api/lugat?kelime=${searchTerm}`);
     const data = await res.json();
-    setSearchResults(data);
-    console.log(searchResults);
+    if (data['error'] == 'Sonuç bulunamadı') {
+      setSearchResults([]);
+      return;
+    }
+    setSearchResults(data[0].anlamlarListe);
     console.log(data);
   };
+
   return (
     <Container>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "18px",
-        }}
-      >
+      <div>
         <Input
           type="text"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+          }}
         />
         <Button onClick={handleSearch}>Ara</Button>
       </div>
       <div>
+      {searchResults.length == 0 && <p>Aradığınız kelimeye ait sonuç bulunamadı.</p>}
         <Ul>
-          {searchResults.map((item) => (
-            <Li key={item.anlam_sira}>{item.anlam}</Li>
+          {searchResults.map((result) => (
+            <Li key={result.anlam_id}>{result.anlam}</Li>
           ))}
         </Ul>
       </div>
