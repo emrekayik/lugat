@@ -21,12 +21,12 @@ const Input = styled.input`
   border-radius: 4px;
 
   &:hover {
-    border-color: #0070f3;
+    border-color: palevioletred;
   }
 `;
 
 const Button = styled.button`
-  background-color: #0070f3;
+  background-color: palevioletred;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -63,7 +63,7 @@ const Li = styled.li`
     padding-right: 12px;
     font-variant-numeric: tabular-nums;
     align-self: flex-start;
-    background-image: linear-gradient(to bottom, aquamarine, orangered);
+    background-image: linear-gradient(to bottom, palevioletred, orangered);
     background-attachment: fixed;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

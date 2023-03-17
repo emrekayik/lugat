@@ -16,6 +16,26 @@ const Container = styled.div`
   padding-top: 1em;
   background-color: papayawhip;
   height: 100vh;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 8px; /* genişlik */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* arka plan rengi */
+    border-radius: 5px; /* kenar yarıçapı */
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: palevioletred; /* kaydırma çubuğu rengi */
+    border-radius: 5px; /* kenar yarıçapı */
+    
+    &:hover {
+      // background-color: palevioletred;  /* kaydırma çubuğu rengi (üzerine geldiğinde) */
+    }
+  }
+
 `;
 
 export default function Home() {

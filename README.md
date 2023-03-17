@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lügat
+kelime anlamları TDK'dan çekilmektedir.
 
-## Lügat, Türkçe Sözlük api (v1.0.0)
-
-### eklenti için geliştirilmiştir
+### Proje deneyseldir. Hatalar olabilir.
+#### (v1.0.0)
 
 ```bash
 npm run dev
