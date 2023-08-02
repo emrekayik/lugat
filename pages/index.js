@@ -1,45 +1,9 @@
-import React from "react";
-import Head from "next/head";
-import styled from "styled-components";
-import Sozluk from "../components/Sozluk";
-
-const Title = styled.h1`
-  font-size: 4em;
-  color: palevioletred;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4em;
-  padding-top: 1em;
-  background-color: papayawhip;
-  height: 100vh;
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    width: 8px; /* genişlik */
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* arka plan rengi */
-    border-radius: 5px; /* kenar yarıçapı */
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background-color: palevioletred; /* kaydırma çubuğu rengi */
-    border-radius: 5px; /* kenar yarıçapı */
-    
-    &:hover {
-      // background-color: palevioletred;  /* kaydırma çubuğu rengi (üzerine geldiğinde) */
-    }
-  }
-
-`;
+import React from 'react'
+import Head from 'next/head'
+import Sozluk from '@/components/Sozluk'
+import Footer from '@/components/Footer'
 
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -48,10 +12,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container>
-        <Title>Lügat</Title>
+      <div className="flex flex-col items-center mt-12">
+        <h1 className={`font-roboto-slab font-normal text-9xl text-primary`}>
+          Lügat
+        </h1>
         <Sozluk />
-      </Container>
+        <Footer />
+      </div>
     </>
-  );
+  )
 }
