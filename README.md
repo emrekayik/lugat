@@ -4,7 +4,7 @@ kelime anlamları TDK'dan çekilmektedir.
 
 ### Proje deneyseldir. Hatalar olabilir.
 
-#### (v2.0.0)
+#### (v2.0.1)
 
 ```bash
 npm run dev
