@@ -1,6 +1,6 @@
 {
   "name": "lügat",
-  "short_name": "",
+  "short_name": "lügat",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -15,5 +15,6 @@
   ],
   "theme_color": "#db7093",
   "background_color": "#ffefd5",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "https://lugat.vercel.app"
 }
