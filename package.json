@@ -11,6 +11,7 @@
     "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@vercel/analytics": "^1.0.1",
     "next": "13.2.4",
     "next-pwa": "^5.6.0",
     "react": "18.2.0",
